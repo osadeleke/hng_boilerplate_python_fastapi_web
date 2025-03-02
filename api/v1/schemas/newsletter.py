@@ -42,15 +42,6 @@ class SingleNewsletterResponse(BaseModel):
 class NewsletterSubscriber(BaseModel):
     id: str
     email: str
-    subscribed_at: datetime
 
     class Config:
         from_attributes = True
-
-class PaginatedNewsletterResponse(BaseModel):
-    status_code: int = 200
-    page: int
-    per_page: int
-    total_subscribers: int
-    total_pages: int
-    subscribers: List[NewsletterSubscriber]

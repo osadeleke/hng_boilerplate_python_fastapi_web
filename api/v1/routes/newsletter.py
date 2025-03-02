@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, status, Query, BackgroundTasks, HTTPException
+from fastapi import APIRouter, Depends, status, Query, BackgroundTasks
 from typing import Annotated
 from sqlalchemy.orm import Session
 from api.utils.success_response import success_response
@@ -7,7 +7,6 @@ from api.v1.schemas.newsletter import (
     EmailRetrieveSchema,
     SingleNewsletterResponse,
     UpdateNewsletter,
-    PaginatedNewsletterResponse,
 )
 from api.db.database import get_db
 from api.v1.services.newsletter import NewsletterService, Newsletter

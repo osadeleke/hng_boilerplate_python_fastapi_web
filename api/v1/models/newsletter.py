@@ -24,10 +24,6 @@ class NewsletterSubscriber(BaseTableModel):
         ForeignKey("newsletters.id"), nullable=True
     )
 
-    subscribed_at: Mapped[datetime] = mapped_column(
-        DateTime, default=datetime.utcnow, nullable=False
-    )
-
     newsletter: Mapped["Newsletter"] = relationship(
         back_populates="newsletter_subscribers"
     )

@@ -105,7 +105,7 @@ class NewsletterService(Service):
         total_pages = ceil(total_subscribers / per_page)
         
         # Get paginated subscribers
-        subscribers = db.query(NewsletterSubscriber).order_by(NewsletterSubscriber.subscribed_at.desc()).offset(offset).limit(per_page).all()
+        subscribers = db.query(NewsletterSubscriber).order_by(NewsletterSubscriber.created_at.desc()).offset(offset).limit(per_page).all()
             
         return {
             "page": page,
